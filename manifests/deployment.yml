@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vnikumarkuberpipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vnikumarkuberpipeline
+  template:
+    metadata:
+      labels:
+        app: vnikumarkuberpipeline 
+    spec:
+      containers:
+        - name: vnikumarkuberpipeline 
+          image: containervnikumar22.azurecr.io/vnikumarkuberpipeline
+          ports:
+          - containerPort: 80
